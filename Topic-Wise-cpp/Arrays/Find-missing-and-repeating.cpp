@@ -46,7 +46,7 @@ vector<int> findTwoElement(vector<int> arr, int n)
     return ans;
 }
 
-// SECOND
+// SECOND -- will not work in large test cases
 vector<int> findTwoElement2(vector<int> arr, int n)
 {
     long long int originalSum = 0, duplicateSum = 0, originalSquareSum = 0, duplicateSquareSum = 0;
@@ -73,6 +73,39 @@ vector<int> findTwoElement2(vector<int> arr, int n)
     int repeatedNo = (firstEqu + secondEqu) / 2;
     int missingNo = repeatedNo - firstEqu;
     return {(int)repeatedNo, (int)missingNo};
+}
+
+vector<int> findTwoElement3(vector<int> &arr)
+{
+    vector<int> ans(2, -1);
+    int n = arr.size();
+
+    //   original arr = 1,3,3
+    //   new arr      = -1,3,-3
+    for (int i = 0; i < n; i++)
+    {
+        int curr = abs(arr[i]);
+
+        if (arr[curr - 1] < 0)
+        {
+            ans[0] = curr;
+        }
+        else
+        {
+            arr[curr - 1] = -arr[curr - 1];
+        }
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] > 0)
+        {
+            ans[1] = i + 1;
+            break;
+        }
+    }
+
+    return ans;
 }
 
 int main()

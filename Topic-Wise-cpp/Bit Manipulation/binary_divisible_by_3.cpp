@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    string str = "10011";
+    // string str = "10011";
+    string str = "10101";
     reverse(str.begin(), str.end());
 
     int rem = 0;
@@ -38,7 +39,7 @@ int main()
                 odd++;
         }
     }
-
+    cout << even << " odd=" << odd << endl;
     if ((even - odd) % 3 == 0)
         cout << "divisible by 3\n";
     else

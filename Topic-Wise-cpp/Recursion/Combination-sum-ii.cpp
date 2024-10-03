@@ -107,17 +107,16 @@ int main()
 {
     vector<int> candiadtes = {2, 5, 2, 1, 2};
     candiadtes = {10, 1, 2, 7, 6, 1, 5};
-    candiadtes = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    // candiadtes = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
 
-    cout << "\nFirst Method \n";
-    vector<vector<int>> res = combinationSum11(candiadtes, 27);
-    DisplayArray(res);
+    // cout << "\nFirst Method \n";
+    // vector<vector<int>> res = combinationSum11(candiadtes, 27);
+    // DisplayArray(res);
 
     cout << "\n\nSecond Method\n";
 
-    res.clear();
-    res = combinationSum12(candiadtes, 27);
-    DisplayArray(res);
+    vector<vector<int>> res2 = combinationSum12(candiadtes, 8);
+    DisplayArray(res2);
 
     return 0;
 }
