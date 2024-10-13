@@ -75,6 +75,7 @@ vector<int> findTwoElement2(vector<int> arr, int n)
     return {(int)repeatedNo, (int)missingNo};
 }
 
+// THIRD
 vector<int> findTwoElement3(vector<int> &arr)
 {
     vector<int> ans(2, -1);

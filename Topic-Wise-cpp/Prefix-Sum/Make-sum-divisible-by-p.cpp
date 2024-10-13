@@ -17,6 +17,7 @@ int minSubarray(vector<int> &nums, int p)
 
     if (totalSum < p)
         return -1;
+
     else if (totalSum == p || (totalSum % p) == 0)
         return 0;
 
@@ -47,7 +48,7 @@ int minSubarray2(vector<int> &nums, int p)
         tofind = (totalsum - (prefixsum[j]-prefixsum[i]))%p
         tofind = (totalsum - prefixsum[j])%p + prefixsum[i]%p
 
-        prefixsum[i]%p = (prefixsum[i] - totalsum + p)%p  (to stop from becoming out of bound add p)
+        prefixsum[i]%p = (prefixsum[j] - totalsum + p)%p  (to stop from becoming out of bound add p)
         needed = (currsum - target + p)%p
     */
 

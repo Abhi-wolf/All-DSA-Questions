@@ -91,7 +91,7 @@ vector<vector<int>> subSets2(vector<int> nums)
 
 void Display2DArray(vector<vector<int>> arr)
 {
-    cout << endl;
+    cout << "\n\n";
     for (int i = 0; i < arr.size(); i++)
     {
         for (int j = 0; j < arr[i].size(); j++)
