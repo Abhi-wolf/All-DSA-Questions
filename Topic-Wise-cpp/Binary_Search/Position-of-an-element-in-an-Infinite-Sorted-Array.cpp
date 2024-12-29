@@ -33,7 +33,7 @@ int searchInInfiniteArray(vector<int> arr, int target)
         start = newStart;
     }
 
-    cout << "target =" << target << " --> " << start << " - " << end << endl;
+    // cout << "target =" << target << " --> " << start << " - " << end << endl;
     return binarySearch(arr, target, start, end);
 }
 
@@ -42,8 +42,8 @@ int main()
     vector<int> arr = {3, 5, 7, 9, 10, 90, 100, 130, 140, 160, 170};
 
     cout << "10 == " << searchInInfiniteArray(arr, 10) << endl;
-    cout << "10 == " << searchInInfiniteArray(arr, -1) << endl;
-    cout << "10 == " << searchInInfiniteArray(arr, 31) << endl;
-    cout << "10 == " << searchInInfiniteArray(arr, 90) << endl;
+    cout << "-1 == " << searchInInfiniteArray(arr, -1) << endl;
+    cout << "31 == " << searchInInfiniteArray(arr, 31) << endl;
+    cout << "90 == " << searchInInfiniteArray(arr, 90) << endl;
     return 0;
 }

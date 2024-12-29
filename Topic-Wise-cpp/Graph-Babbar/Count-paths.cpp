@@ -64,6 +64,6 @@ int possible_paths(vector<vector<int>> edges, int n, int start, int destination)
 int main()
 {
     vector<vector<int>> edges = {{0, 1}, {0, 3}, {0, 2}, {2, 0}, {2, 1}, {1, 3}};
-    cout << "Count = " << possible_paths(edges, 4, 2, 3) << endl;
+    cout << "Count = " << possible_paths(edges, 4, 0, 3) << endl;
     return 0;
 }

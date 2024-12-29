@@ -1,18 +1,13 @@
- // while (required >= sizeOfMap && start < n)
-    // {
-    //     if (mp.find(s[start]) != mp.end())
-    //     {
-    //         if (len >= (end - start + 1))
-    //         {
-    //             len = end - start + 1;
-    //             ind = start;
-    //         }
+while (cnt <= 0)
+        // {
+        //     ans += (n - j);
 
-    //         mp[s[start]]++;
+        //     if (map[word1[i] - 'a'] > 0)
+        //     {
+        //         map[word1[i] - 'a']++;
 
-    //         if (mp[s[start]] > 0)
-    //             required--;
-    //     }
-    //     cout << "end = " << end << "  start=" << start << " len=" << len << endl;
-    //     start++;
-    // }
+        //         if (map[word1[i] - 'a'] == 1)
+        //             cnt++;
+        //     }
+        //     i++;
+        // }

@@ -32,7 +32,9 @@ reach node 22. The path followed will be: 77 -> 33 -> 11 -> 22. Hence, the resul
 
 
 Your Task:
-You don't need to read input or print anything. Your task is to complete the function findDist() which takes the root node of the tree and the two node values a and b as input parameters and returns the minimum distance between the nodes represented by the two given node values.
+You don't need to read input or print anything. Your task is to complete the function findDist() which takes the
+root node of the tree and the two node values a and b as input parameters and returns the minimum distance between
+the nodes represented by the two given node values.
 
 Expected Time Complexity: O(n).
 Expected Auxiliary Space: O(Height of the Tree).

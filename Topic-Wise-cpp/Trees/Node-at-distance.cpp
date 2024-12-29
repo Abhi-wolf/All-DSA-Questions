@@ -2,7 +2,6 @@
 #include <queue>
 #include <queue>
 using namespace std;
-int c = 0;
 
 /* Given a binary tree with n nodes and a non-negative integer k, the task is to count the number of special nodes.
 A node is considered special if there exists at least one leaf in its subtree such that the distance between the node
@@ -55,6 +54,7 @@ Expected Auxiliary Space: O(Height of the Tree).
 Constraints:
 1 <= n <= 105
 */
+int c = 0;
 
 class TreeNode
 {

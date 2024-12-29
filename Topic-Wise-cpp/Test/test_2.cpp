@@ -1,124 +1,72 @@
-//{ Driver Code Starts
-// Initial Template for C++
-
-#include <bits/stdc++.h>
-
+#include <iostream>
+#include <vector>
+#include <set>
+#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
-/*
-// } Driver Code Ends
-//User function template for C++
-class Solution{
-public:
-	
-	bool fascinating(int n) {
-	    // code here
-	    int twomul=2*n;
-	    int threemul=3*n;
-	    
-	    int arr[9];
-	    
-	    int mod;
-	    int i=0;
-	    
-	    while(n!=0)
-	    {
-	        arr[i++]=n%10;
-	        
-	        if(i>10)
-	            return false;
-	            
-	        n=n/10;
-	    }
-	    
-	    while(twomul!=0)
-	    {
-	        arr[i++]=twomul%10;
-	        
-	        if(i>10)
-	            return false;
-	        
-	        twomul=twomul/10;
-	    }
-	    
-	    while(threemul!=0)
-	    {
-	        arr[i++]=threemul%10;
-	        threemul=threemul/10;
-	        if(i>10)
-	            return false;
-	    }
-	    
-	    sort(arr,arr+9);
-	    for(int j=0;j<10;j++)
-	    {
-	        if(arr[j] != j+1)
-	            return false;
-	    }
-	    
-	    return true;
-	    
-	}
-};
+vector<vector<int>> findTriplets(vector<int> &arr)
+{
+	int size = arr.size();
+	vector<vector<int>> res;
+	unordered_map<int, vector<pair<int, int>>> um;
+	set<vector<int>> st;
 
-//{ Driver Code Starts.
-
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n;
-        cin >> n;
-        Solution ob;
-        auto ans = ob.fascinating(n);
-        if (ans) {
-            cout << "Fascinating\n";
-        } else {
-            cout << "Not Fascinating\n";
-        }
-    }
-    return 0;
-}
-// } Driver Code Ends */
-
-int main() {
-	// your code goes here
-	int t;
-	cin>>t;
-	
-	while(t--)
+	for (int i = 0; i < size; i++)
 	{
-	    string str1,str2;
-	    cin>>str1;
-	    
-	    int len=str1.size();
-	    char ch=str1[0];
-	    int i=0,j=0;
-	    int count=0;
-	    while(i<len)
-	    {
-            //cout<<"hello\n";
-	        if(str1[i]==ch)
-	            count++;
-	        else
-	        {
-	            //str2[j++]=ch;
-	            //str2[j++]=count;
+		for (int j = i + 1; j < size; j++)
+		{
+			int sum = arr[i] + arr[j];
 
-                str2.push_back(ch);
-                //string s=to_string(count);
-	            str2.push_back(char(count));
-	            ch=str1[i];
-	            count=1;
-	        }
-	            i++;
-	    }
-        cout<<str1<<"  "<<str2<<endl;
-        cout<<str1.size()<<"  "<<str2.size()<<endl;
-	    if(str1.size() > str2.size())
-	        cout<<"YES \n";
-	    else
-	        cout<<"NO \n";
+			um[sum].push_back(make_pair(i, j));
+		}
 	}
+
+	for (int i = 0; i < size; i++)
+	{
+		int req = 0 - arr[i];
+
+		if (um.find(req) != um.end())
+		{
+			cout << "found \n";
+			vector<pair<int, int>> pairs = um[req];
+
+			for (auto p : pairs)
+			{
+				if (p.first != i && p.second != i)
+				{
+					vector<int> triplet = {i, p.first, p.second};
+					sort(triplet.begin(), triplet.end());
+					st.insert(triplet);
+				}
+			}
+		}
+	}
+
+	for (auto x : st)
+		res.push_back(x);
+
+	return res;
+}
+
+void Display2DArray(vector<vector<int>> arr)
+{
+	cout << endl;
+	for (int i = 0; i < arr.size(); i++)
+	{
+		for (int j = 0; j < arr[0].size(); j++)
+		{
+			cout << arr[i][j] << " , ";
+		}
+		cout << endl;
+	}
+}
+
+int main()
+{
+	// vector<int> arr = {0, -1, 2, -3, 1};
+	vector<int> arr = {1, -2, 1, 0, 5};
+	vector<vector<int>> ans = findTriplets(arr);
+	Display2DArray(ans);
 	return 0;
 }

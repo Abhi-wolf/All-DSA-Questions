@@ -33,5 +33,6 @@ int main()
     cout << "Answer = " << minimumAbsDifferenceElement(arr, 13) << endl;
     cout << "Answer = " << minimumAbsDifferenceElement(arr, 4) << endl;
     cout << "Answer = " << minimumAbsDifferenceElement(arr, 8) << endl;
+    cout << "Answer = " << minimumAbsDifferenceElement(arr, 0) << endl;
     return 0;
 }

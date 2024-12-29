@@ -62,7 +62,7 @@ long long validSubstringCount(string word1, string word2)
         // it means all the chars of word2 are present in the substring
         while (validCount == requiredCount)
         {
-            // all the string including that point will be the answer
+            // all the string including that point and after will be the answer
             cnt += (n - right);
 
             // remove the leftmost character from the map
@@ -137,9 +137,57 @@ long long validSubstringCount2(string word1, string word2)
 
     return cnt;
 }
+
+// testing( using single map)
+long long validSubstringCount3(string word1, string word2)
+{
+    unordered_map<char, int> um;
+    int cnt = 0, ans = 0;
+    int i = 0, j = 0, n = word1.size();
+
+    for (char ch : word2)
+        um[ch]++;
+
+    cnt = um.size();
+
+    while (j < n)
+    {
+        if (um.find(word1[j]) != um.end())
+        {
+            um[word1[j]]--;
+
+            if (um[word1[j]] == 0)
+            {
+                cnt--;
+            }
+        }
+
+        while (cnt <= 0)
+        {
+            ans += (n - j);
+
+            if (um.find(word1[i]) != um.end())
+            {
+                um[word1[i]]++;
+
+                if (um[word1[i]] == 1)
+                    cnt++;
+            }
+            i++;
+        }
+        j++;
+    }
+
+    return ans;
+}
+
 int main()
 {
     cout << validSubstringCount("abcabc", "abc") << endl;
     cout << validSubstringCount2("abcabc", "abc") << endl;
+
+    cout << validSubstringCount3("abcabc", "abc") << endl;
+    cout << validSubstringCount3("abcabc", "aaabc") << endl;
+    cout << validSubstringCount3("bcca", "abc") << endl;
     return 0;
 }

@@ -104,7 +104,12 @@ int main()
     int n = sizeof arr / sizeof arr[0];
     int m = 2; // No. of students
 
+    int arr2[] = {1, 2, 3, 4};
+
     cout << "Minimum number of pages = "
          << findPages(n, arr, m) << endl;
+
+    cout << "Minimum number of pages = "
+         << findPages(4, arr2, 4) << endl;
     return 0;
 }
